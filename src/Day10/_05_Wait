@@ -1,0 +1,38 @@
+Wait Methods for Selenium
+
+driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
+
+It waits for the specified duration for the HTML files to be downloaded from the server
+
+------------------------------------------------------------
+Implicitly Wait
+
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+It waits for the specified duration for the browser translate all the file and converts them into HTML format.
+This doesn't mean all elements are displayed on the screen.
+It wait for the all elements on the page
+
+--------------------------------------------------------------
+Explicitly wait
+
+It stops the code execution until the a certain condition is met.
+We will be able to wait for only one element or the elements that has the same locator.
+
+
+ExpectedConditions
+------------------------------------------
+titleIs                         -> Waits for the title becomes ...
+titleContains                   ->
+urlToBe                         -> Waits until the url becomes ...
+urlContains                     ->
+visibilityOfElementLocated      -> Waits until the element in the given locator becomes visible
+invisibilityOfElementLocated    ->
+elementToBeClickable            -> Waits until an element becomes clickable
+elementToBeSelected             -> Waits until an element becomes selected
+textToBe                        -> Waits until the text of an element becomes ...
+alertIsPresent                  -> Waits for the alert pops-up
+visibilityOfAllElements         -> Waits for all of the elements that have the same locator to become visible
+numberOfElementsToBe            -> Waits until the number of the elements that have the same locator becomes a specific number
+numberOfElementsToBeLessThan     -> Waits until the number of the elements that have the same locator becomes less than a specific number
+numberOfElementsToBeMoreThan     -> Waits until the number of the elements that hav

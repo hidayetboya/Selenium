@@ -1,0 +1,44 @@
+XPATH
+
+Pros
+-> can search both forward and backward (CSS Selector can only search forward)
+-> can search with displayed text
+-> can locate by index
+
+Cons
+-> works slower than the other methods
+
+/html/body/div/h1  -> Absolute XPATH
+
+tagName[attribute='value']  -> CSS selector
+
+//tagName[@attribute='value'] -> XPATH (Relative XPATH)
+
+//h1[text()='Survey Demo']  -> element with a displayed name "Survey Demo"
+
+//input[starts-with(@id,'syx_e')] -> element that has an id starts with "syx_e"
+
+//input[contains(@id,'tzn')] -> element that has an id contains "tzn"
+
+//div[contains(text(),'how you use XYZ')] -> element that has a visible text and contains "how you use XYZ"
+
+tagName[attribute='value'][attribute='value'] -> CSS selector
+
+//input[@type='hidden' and @name='syx_tzn'] -> element that has both of these attributes
+//input[@type='hidden' or @name='syx_tzn'] -> element that has either type or name attribute
+
+tagName[attribute='value']>  -> CSS child
+
+//div[@id='user-name']/input[@type='text'] -> searches for input among the immediate children
+//div[@id='user-name']//input[@type='text'] -> searches for input among the entire family (children and grand Children)
+
+//ul[@class='nav navbar-nav']//li/following-sibling::li[@class='dropdown'] -> first sibling of the first li element
+
+//ul[@class='nav navbar-nav']//li/following::li[@class='dropdown'] -> li elements among all siblings after the first child
+
+//button[text()='Show Message']/..                          -> parent of button element
+//button[text()='Show Message']/parent::form                -> works as the previous one
+//button[text()='Show Message']/../..                       -> grand parent of button element
+//button[text()='Show Message']/parent::form/parent::div    -> works as the previous one
+
+(//button[@class='btn btn-primary'])[2]     -> gives the second of button elements with the same locator

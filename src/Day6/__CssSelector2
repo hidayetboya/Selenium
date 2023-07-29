@@ -1,0 +1,60 @@
+driver.findElement(By.id("alerttest"));
+driver.findElement(By.name("alerttest"));
+driver.findElement(By.className("alerttest"));
+driver.findElement(By.linkText("alerttest"));           -> can be used only for a tags
+driver.findElement(By.partialLinkText("alerttest"));    -> can be used only for a tags
+driver.findElement(By.tagName("alerttest"));
+
+CSS Selector
+tagName[attribute='value']
+button[type='button'][onclick='showInput();']
+
+<div>
+
+    <span> Hello 1 </span>
+    <span> Hello 2 </span>
+
+    <div>
+        <img src="image.png"/>
+        <input type="text"/>
+    </div>
+
+</div>
+<label> Hello </label>
+
+div[id='user-message'] > label[style='margin-top: 10px;']
+-> gives the first child of the div tag with the id of user-message
+
+div[id='user-message'] > label + span
+->gives span element right after label element
+
+div[id='user-message'] > span
+-> gives any span tag
+
+[id='get-input'] input
+-> gives the first ever input child of the
+    element with id='get-input' from all children and grand children
+
+form[id='get-input'] input[class='form-control']
+-> you can write more specific
+
+ul[class='nav navbar-nav']>:nth-child(3)
+-> gives the 3rd child of the first element (better than writing [class='nav navbar-nav'] > li+li+li )
+
+ul[class='nav navbar-nav']>:first-child
+-> gives the first one of the immediate children
+
+[class='nav navbar-nav']>:last-child
+-> gives the last one of the immediate children
+
+[class='nav navbar-nav'] > :nth-last-child(2)
+-> gives the 2nd child from the end of the immediate children
+
+ul[class='nav navbar-nav'] > *
+-> gives all of the immediate children
+
+Symbols
+>       -> searches among the immediate children
+space   -> searches among all children
++       -> finds the first sibling
+~       -> searches among all siblings
